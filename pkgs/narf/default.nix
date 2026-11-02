@@ -43,5 +43,13 @@ in
       inherit (manifest.package) description;
       license = lib.getLicenseFromSpdxId workspace.workspace.package.license;
       mainProgram = "narf";
+      maintainers = [
+        {
+          email = "dev@farbzen.de";
+          github = "farbzen";
+          githubId = 60570640;
+          name = "Fabian Meier";
+        }
+      ];
     };
   }
