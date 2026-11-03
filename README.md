@@ -7,6 +7,7 @@ packages, NixOS modules and overlays._
 
 [![Nix Flake](https://img.shields.io/badge/Nix-flake-5277C3?style=for-the-badge&labelColor=081216&logo=nixos&logoColor=white)](flake.nix)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green?style=for-the-badge&labelColor=081216)](LICENSE)
+[![Ko-Fi donate](https://img.shields.io/badge/donate-kofi?style=for-the-badge&labelColor=081216&color=ee5556&logo=ko-fi&logoColor=white)](https://ko-fi.com/farbzen)
 
 </div>
 
