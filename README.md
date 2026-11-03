@@ -5,8 +5,8 @@
 _Personal [Nix User Repository](https://github.com/nix-community/NUR) with
 packages, NixOS modules and overlays._
 
-[![Nix Flake](https://img.shields.io/badge/Nix-flake-5277C3?style=flat-square&logo=nixos&logoColor=white)](flake.nix)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
+[![Nix Flake](https://img.shields.io/badge/Nix-flake-5277C3?style=for-the-badge&logo=nixos&logoColor=white)](flake.nix)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
 
 </div>
 
