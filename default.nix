@@ -4,4 +4,5 @@
   overlays = import ./overlays;
 
   narf = pkgs.callPackage ./pkgs/narf {};
+  mixedupmh = pkgs.callPackage ./pkgs/mixedupmh {};
 }
