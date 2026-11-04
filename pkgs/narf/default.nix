@@ -8,16 +8,16 @@
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "narf";
-  version = "1.0.0";
+  version = "2.1.0";
 
   src = fetchFromGitHub {
     owner = "farbzen";
     repo = "narf";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-lhfJxQzUzUZzVhs3Blcj3W5EpC5Q2NS3NF1pE+QeeQ8=";
+    hash = "sha256-39jgPK2cdpEuptswWy/1ph682K91klruvOLw018z3+A=";
   };
 
-  cargoHash = "sha256-9VcsZ2iOmn6oAHFHnK23zXssdTm2aiA9+96gk7kNpfU=";
+  cargoHash = "sha256-3Ck3WqNeX0033JBkcwwRUTHQHCpIe+3CJ3tuZOqVPeY=";
 
   nativeBuildInputs = [makeWrapper];
 
