@@ -60,11 +60,11 @@ the NixOS module above.
 
 > [!NOTE]
 > CI builds via `default.nix` against the current heads of the
-> `nixpkgs-unstable` and `nixos-unstable` channels (on every push to `main` and
-> daily at 04:00 UTC), not against the nixpkgs revision pinned in this flake's
-> `flake.lock`. Store paths depend on the exact nixpkgs revision, so you only
-> get cache hits if the nixpkgs your packages are built with matches a revision
-> CI has built:
+> `nixpkgs-unstable` and `nixos-unstable` channels and against the nixpkgs
+> revision pinned in this flake's `flake.lock` (on every push to `main` and
+> daily at 04:00 UTC). Store paths depend on the exact nixpkgs revision, so you
+> only get cache hits if the nixpkgs your packages are built with matches a
+> revision CI has built:
 >
 > - **NUR / channels**: hits are likely while your `nixos-unstable` or
 >   `nixpkgs-unstable` channel is up to date.
@@ -72,8 +72,8 @@ the NixOS module above.
 >   require your own `nixpkgs` input to track one of these channels and to be
 >   updated regularly.
 > - **Flake without `follows`**: packages use the nixpkgs pinned in this
->   repository's `flake.lock`, which usually differs from the channel heads CI
->   built against, so local builds are likely.
+>   repository's `flake.lock`, so hits are likely for every commit CI has built
+>   on `main`.
 
 ## License
 
