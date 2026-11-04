@@ -6,6 +6,7 @@ _Personal [Nix User Repository](https://github.com/nix-community/NUR) with
 packages, NixOS modules and overlays._
 
 [![Nix Flake](https://img.shields.io/badge/Nix-flake-5277C3?style=for-the-badge&labelColor=081216&logo=nixos&logoColor=white)](flake.nix)
+[![Binary cache](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Frepos%2Ffarbzen%2Fnurpkgs%2Factions%2Fworkflows%2Fbuild.yml%2Fruns%3Fbranch%3Dmain%26status%3Dsuccess%26exclude_pull_requests%3Dtrue%26per_page%3D1&query=%24.workflow_runs%5B0%5D.updated_at&label=cache&color=4C9A6A&style=for-the-badge&labelColor=081216)](https://app.cachix.org/cache/farbzen)
 [![License: MIT](https://img.shields.io/badge/license-MIT-B0BFC9?style=for-the-badge&labelColor=081216)](LICENSE)
 [![Ko-Fi donate](https://img.shields.io/badge/donate-kofi?style=for-the-badge&labelColor=081216&color=ee5556&logo=ko-fi&logoColor=white)](https://ko-fi.com/farbzen)
 
@@ -49,8 +50,6 @@ Declare the cache in the `nixConfig` of your own `flake.nix`:
     extra-substituters = ["https://farbzen.cachix.org"];
     extra-trusted-public-keys = ["farbzen.cachix.org-1:8KQga60LYPZVg0E4iKZgQhTmI5dV38Mb9iSuryp8BoY="];
   };
-
-  inputs.nurpkgs.url = "github:farbzen/nurpkgs";
 }
 ```
 
