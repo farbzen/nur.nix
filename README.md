@@ -24,6 +24,57 @@ CI builds all packages and pushes them to the
 cachix use farbzen
 ```
 
+### NixOS configuration
+
+Add the cache declaratively to your `configuration.nix` or any NixOS module:
+
+```nix
+{
+  nix.settings = {
+    extra-substituters = ["https://farbzen.cachix.org"];
+    extra-trusted-public-keys = ["farbzen.cachix.org-1:8KQga60LYPZVg0E4iKZgQhTmI5dV38Mb9iSuryp8BoY="];
+  };
+}
+```
+
+The `extra-*` options keep `cache.nixos.org` as the default substituter.
+
+### Flakes
+
+Declare the cache in the `nixConfig` of your own `flake.nix`:
+
+```nix
+{
+  nixConfig = {
+    extra-substituters = ["https://farbzen.cachix.org"];
+    extra-trusted-public-keys = ["farbzen.cachix.org-1:8KQga60LYPZVg0E4iKZgQhTmI5dV38Mb9iSuryp8BoY="];
+  };
+
+  inputs.nurpkgs.url = "github:farbzen/nurpkgs";
+}
+```
+
+Nix only applies `nixConfig` for trusted users and asks for confirmation
+unless `accept-flake-config = true` is set. For system configurations, prefer
+the NixOS module above.
+
+> [!NOTE]
+> CI builds via `default.nix` against the current heads of the
+> `nixpkgs-unstable` and `nixos-unstable` channels (on every push to `main` and
+> daily at 04:00 UTC), not against the nixpkgs revision pinned in this flake's
+> `flake.lock`. Store paths depend on the exact nixpkgs revision, so you only
+> get cache hits if the nixpkgs your packages are built with matches a revision
+> CI has built:
+>
+> - **NUR / channels**: hits are likely while your `nixos-unstable` or
+>   `nixpkgs-unstable` channel is up to date.
+> - **Flake with `inputs.nurpkgs.inputs.nixpkgs.follows = "nixpkgs"`**: hits
+>   require your own `nixpkgs` input to track one of these channels and to be
+>   updated regularly.
+> - **Flake without `follows`**: packages use the nixpkgs pinned in this
+>   repository's `flake.lock`, which usually differs from the channel heads CI
+>   built against, so local builds are likely.
+
 ## License
 
 See [LICENSE](LICENSE).
