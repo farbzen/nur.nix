@@ -16,17 +16,6 @@ packages, NixOS modules and overlays._
 NixOS modules and overlays for NixOS users and exposes them both through the
 classic NUR channel (`nur.repos.farbzen`) and as a Nix flake.
 
-## Packages
-
-| Package       | Description                                                                                         |
-| ------------- | --------------------------------------------------------------------------------------------------- |
-| `narf`        | [NixOS Advanced Rebuild Flake](https://github.com/farbzen/narf) – rebuild flakes and create commits |
-| `mixedupmh`   | [Randomizer](https://github.com/farbzen/mixedupmh) for Monster Hunter Wilds hunting parties         |
-| `zenvim`      | [zenvim](https://github.com/farbzen/zenvim.nix) Neovim configuration, `default` profile             |
-| `zenvim-mini` | [zenvim](https://github.com/farbzen/zenvim.nix) Neovim configuration, `minimal` profile             |
-
-Both `zenvim` packages provide `nvim`, so install only one of them.
-
 ## Binary Cache
 
 CI builds all packages and pushes them to the
